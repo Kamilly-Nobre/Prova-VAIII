@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Professor
+from Professor import Professorserializers
 
-# Create your views here.
+
+class ProfessorView (viewsets.ModelViewSet):
+    queryset = Professor.objects.all()
+    serializer_class = Professorserializers
+

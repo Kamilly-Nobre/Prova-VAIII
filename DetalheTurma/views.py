@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import DetalheTurma
+from DetalheTurma import DetalheTurmaserializers
 
-# Create your views here.
+class DetalheTurmaView (viewsets.ModelViewSet):
+    queryset = DetalheTurma.objects.all()
+    serializer_class = DetalheTurmaserializers
+

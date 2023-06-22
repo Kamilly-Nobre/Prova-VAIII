@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Turma
+from Turma import Turmaserializers
 
-# Create your views here.
+class TurmaView (viewsets.ModelViewSet):
+    queryset = Turma.objects.all()
+    serializer_class = Turmaserializers
+
